@@ -1,18 +1,18 @@
 settings:
-  title: 'Status Page'
-  url: 'https://status-page.mgt.moe' # used for Slack messages
+  title: 'OI Wiki 状态页'
+  url: 'https://status.oi-wiki.org' # used for Slack messages
   logo: logo-192x192.png # image in ./public/ folder
-  daysInHistogram: 90 # number of days you want to display in histogram
+  daysInHistogram: 365 # number of days you want to display in histogram
   collectResponseTimes: true # collects avg response times from CRON locations
 
-  allmonitorsOperational: 'All Systems Operational'
-  notAllmonitorsOperational: 'Not All Systems Operational'
-  monitorLabelOperational: 'Operational'
-  monitorLabelNotOperational: 'Not Operational'
-  monitorLabelNoData: 'No data'
-  dayInHistogramNoData: 'No data'
-  dayInHistogramOperational: 'All good'
-  dayInHistogramNotOperational: ' incident(s)' # xx incident(s) recorded
+  allmonitorsOperational: '所有站点工作正常'
+  notAllmonitorsOperational: '部分站点出现问题'
+  monitorLabelOperational: '正常'
+  monitorLabelNotOperational: '失效'
+  monitorLabelNoData: '暂无数据'
+  dayInHistogramNoData: '暂无数据'
+  dayInHistogramOperational: '全部正常'
+  dayInHistogramNotOperational: ' 事故' # xx incident(s) recorded
 
 monitors:
   - id: OI-Wiki
