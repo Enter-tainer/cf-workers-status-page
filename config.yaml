@@ -29,13 +29,13 @@ monitors:
     method: GET
     expectStatus: 200
     linkable: true # allows the title to be a link, default=true
-  - id: OI-Wiki-search
-    name: OI Wiki 搜索
-    description: '主站'
-    url: 'https://search.oi-wiki.org:8443/'
-    method: GET
-    expectStatus: 200
-    linkable: false # allows the title to be a link, default=true
+  # - id: OI-Wiki-search
+  #   name: OI Wiki 搜索
+  #   description: '主站'
+  #   url: 'https://search.oi-wiki.org:8443/'
+  #   method: GET
+  #   expectStatus: 200
+  #   linkable: false # allows the title to be a link, default=true
   - id: OI-Wiki-menci
     name: oi.wiki
     description: 'OI Wiki mirror by Menci'
