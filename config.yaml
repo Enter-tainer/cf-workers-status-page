@@ -8,7 +8,7 @@ settings:
   allmonitorsOperational: '所有站点工作正常'
   notAllmonitorsOperational: '部分站点出现问题'
   monitorLabelOperational: '正常'
-  monitorLabelNotOperational: '失效'
+  monitorLabelNotOperational: '离线'
   monitorLabelNoData: '暂无数据'
   dayInHistogramNoData: '暂无数据'
   dayInHistogramOperational: '全部正常'
