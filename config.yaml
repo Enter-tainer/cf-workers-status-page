@@ -22,13 +22,13 @@ monitors:
     method: GET
     expectStatus: 200
     linkable: true # allows the title to be a link, default=true
-  - id: OI-Wiki-com
-    name: oi-wiki.com
-    description: '主站'
-    url: 'http://oi-wiki.com'
-    method: GET
-    expectStatus: 200
-    linkable: true # allows the title to be a link, default=true
+  # - id: OI-Wiki-com
+  #   name: oi-wiki.com
+  #   description: '主站'
+  #   url: 'http://oi-wiki.com'
+  #   method: GET
+  #   expectStatus: 200
+  #   linkable: true # allows the title to be a link, default=true
   # - id: OI-Wiki-search
   #   name: OI Wiki 搜索
   #   description: '主站'
