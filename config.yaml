@@ -2,7 +2,7 @@ settings:
   title: 'OI Wiki 状态页'
   url: 'https://status.oi-wiki.org' # used for Slack messages
   logo: logo-192x192.png # image in ./public/ folder
-  daysInHistogram: 365 # number of days you want to display in histogram
+  daysInHistogram: 90 # number of days you want to display in histogram
   collectResponseTimes: true # collects avg response times from CRON locations
 
   allmonitorsOperational: '所有站点工作正常'
