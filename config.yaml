@@ -25,7 +25,7 @@ monitors:
   - id: OI-Wiki-com
     name: oi-wiki.com
     description: '主站'
-    url: 'https://oi-wiki.com'
+    url: 'http://oi-wiki.com'
     method: GET
     expectStatus: 200
     linkable: true # allows the title to be a link, default=true
@@ -33,13 +33,6 @@ monitors:
     name: OI Wiki 搜索
     description: '主站'
     url: 'https://search.oi-wiki.org:8443'
-    method: GET
-    expectStatus: 200
-    linkable: false # allows the title to be a link, default=true
-  - id: OI-Wiki-dmit
-    name: OI Wiki@DMIT
-    description: 'DMIT'
-    url: 'https://lax-stone.edge.ciel.dev/'
     method: GET
     expectStatus: 200
     linkable: false # allows the title to be a link, default=true
