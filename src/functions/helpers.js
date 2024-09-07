@@ -1,26 +1,30 @@
 import config from '../../config.yaml'
 import { useEffect, useState } from 'react'
 
-const kvDataKey = 'monitors_data_v1_1'
+const kvDataKey = 'monitors_data_v1_1';
 
-export async function getKVMonitors() {
-  // trying both to see performance difference
-  return KV_STATUS_PAGE.get(kvDataKey, 'json')
-  //return JSON.parse(await KV_STATUS_PAGE.get(kvDataKey, 'text'))
+export async function getKVMonitors({ env }) {
+  const stmt = env.DB.prepare('SELECT value FROM oiwiki-status WHERE key = ?');
+  const result = await stmt.bind(kvDataKey).first();
+  return result ? JSON.parse(result.value) : null;
 }
 
-export async function setKVMonitors(data) {
-  return setKV(kvDataKey, JSON.stringify(data))
+export async function setKV({ env }, key, value, metadata, expirationTtl) {
+  // 注意：D1 不直接支持 metadata 和 expirationTtl，
+  // 如果需要这些功能，你需要在应用层面实现它们
+  const stmt = env.DB.prepare('INSERT OR REPLACE INTO oiwiki-status (key, value) VALUES (?, ?)');
+  return stmt.bind(key, JSON.stringify(value)).run();
 }
+
+export async function setKVMonitors({ env }, data) {
+  return setKV({ env }, kvDataKey, data);
+}
+
 
 const getOperationalLabel = (operational) => {
   return operational
     ? config.settings.monitorLabelOperational
     : config.settings.monitorLabelNotOperational
-}
-
-export async function setKV(key, value, metadata, expirationTtl) {
-  return KV_STATUS_PAGE.put(key, value, { metadata, expirationTtl })
 }
 
 export async function notifySlack(monitor, operational) {

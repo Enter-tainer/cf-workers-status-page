@@ -6,7 +6,7 @@ webpack_config = "node_modules/flareact/webpack"
 compatibility_date = "2021-07-23"
 
 [triggers]
-crons = ["*/5 * * * *"]
+crons = ["* * * * *"]
 
 [site]
 bucket = "out"
@@ -17,3 +17,7 @@ entry-point = "./"
 #kv-namespaces = [{binding="KV_STATUS_PAGE", id="xxxx", preview_id=""}]
 #zone_id="xxx"
 #route="xxx"
+[[d1_databases]]
+binding = "DB"
+database_name = "oiwiki-status" # 修改这里
+database_id = "ba897543-c5b8-47c6-b3b3-c5a53d6f5984" # 和这里
